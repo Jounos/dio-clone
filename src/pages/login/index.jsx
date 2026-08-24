@@ -1,10 +1,27 @@
-import { Link } from 'react-router-dom';
+import { Header } from "../../components/Header";
+import { Button } from "../../components/Button";
+import { Container, Wrapper, Column, Row, Title, TitleLogin, SubtitleLogin, EsqueciText, CriarText } from "./style";
+import banner from "../../assets/banner.png";
 
-const Login = () => {
+const Home = () => {
     return (<>
-        <h1>Login</h1>
-        <Link to="/">Voltar para o Home</Link>
+        <Header />
+        <Container>
+            <Column>
+                <Title>
+                    o seu futuro global agora!
+                </Title>
+                <TextContent>
+                    Domine as tecnologias utilizadas pelas empresas mais inovadoras do mundo e encare seu novo
+                    desafio profissional, evoluindo em comunidade com os melhores experts.
+                </TextContent>
+                <Button title="Começar agora" variant="secondary" onClick={ () => null } />
+            </Column>
+            <Column>
+                <Input p0laceholder="email" />
+            </Column>
+        </Container>
     </>)
 }
 
-export { Login };
+export { Home };
