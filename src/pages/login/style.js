@@ -73,3 +73,14 @@ export const CriarText = styled.p`
     line-height: 19px;
     color: #E23DD7;
 `
+
+export const TextContent = styled.p`
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    width: 420px;
+    margin-bottom: 20px;
+    line-height: 22px;
+    color: #FFFFFF;
+`

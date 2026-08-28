@@ -11,4 +11,4 @@ const Input = ({ leftIcon, name, ...rest }) => {
     )    
 }
 
-export { input };
+export { Input };

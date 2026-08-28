@@ -1,27 +1,37 @@
+import { MdEmail, MdLock } from 'react-icons/md';
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
+import { Input } from "../../components/Input"
 import { Container, Wrapper, Column, Row, Title, TitleLogin, SubtitleLogin, EsqueciText, CriarText } from "./style";
-import banner from "../../assets/banner.png";
 
-const Home = () => {
+
+const Login = () => {
     return (<>
         <Header />
         <Container>
             <Column>
                 <Title>
-                    o seu futuro global agora!
+                    A plataforma para você aprender com experts, dominar as principais tecnologias
+                    e entrar mais rápido nas empresas mais desejadas.
                 </Title>
-                <TextContent>
-                    Domine as tecnologias utilizadas pelas empresas mais inovadoras do mundo e encare seu novo
-                    desafio profissional, evoluindo em comunidade com os melhores experts.
-                </TextContent>
-                <Button title="Começar agora" variant="secondary" onClick={ () => null } />
             </Column>
             <Column>
-                <Input p0laceholder="email" />
+                <Wrapper>
+                    <TitleLogin>Faça seu cadastro</TitleLogin>
+                    <SubtitleLogin>Faça seu login e make the change._</SubtitleLogin>
+                    <form>
+                        <Input type="text" placeholder="E-mail" leftIcon={ <MdEmail/> } />
+                        <Input type="passworld" placeholder="Senha" leftIcon={ <MdLock/> }/>
+                        <Button title="Entrar" variant="secondary" onClick={ () => null } />
+                    </form>
+                    <Row>
+                        <EsqueciText>Esqueci Minha Senha</EsqueciText>
+                        <CriarText>Criar Conta</CriarText>
+                    </Row>
+                </Wrapper>
             </Column>
         </Container>
     </>)
 }
 
-export { Home };
+export { Login };
