@@ -4,11 +4,14 @@ import { Button } from "../../components/Button";
 import { Input } from "../../components/Input"
 import { Container, Wrapper, Column, Row, Title, TitleLogin, SubtitleLogin, EsqueciText, CriarText } from "./style";
 import { useNavigate } from 'react-router-dom';
-
+import { useForm } from 'react-hook-form';
 
 const Login = () => {
 
     const navigate = useNavigate();
+    const { contol, handleSubmit, formState: { errors, isValid } } = useForm();
+    const onSubmit = data => console.log(data);
+
     const handleClickSignIn = () => {
         navigate('/feed')
     }
