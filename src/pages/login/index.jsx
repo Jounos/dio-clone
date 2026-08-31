@@ -3,9 +3,16 @@ import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input"
 import { Container, Wrapper, Column, Row, Title, TitleLogin, SubtitleLogin, EsqueciText, CriarText } from "./style";
+import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
+
+    const navigate = useNavigate();
+    const handleClickSignIn = () => {
+        navigate('/feed')
+    }
+
     return (<>
         <Header />
         <Container>
@@ -22,7 +29,7 @@ const Login = () => {
                     <form>
                         <Input type="text" placeholder="E-mail" leftIcon={ <MdEmail/> } />
                         <Input type="passworld" placeholder="Senha" leftIcon={ <MdLock/> }/>
-                        <Button title="Entrar" variant="secondary" onClick={ () => null } />
+                        <Button title="Entrar" variant="secondary" onClick={ handleClickSignIn } type="button" />
                     </form>
                     <Row>
                         <EsqueciText>Esqueci Minha Senha</EsqueciText>
