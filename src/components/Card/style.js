@@ -56,7 +56,8 @@ export const PostInfo = styled.div`
     h4 {
         font-family: 'Open Sans';
         font-style: normal;
-        font-weight: 700font-size: 18px;
+        font-weight: 700;
+        font-size: 18px;
         line-height: 25px;
         color: #FFFFFF;
     }
