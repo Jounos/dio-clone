@@ -29,7 +29,7 @@ const Card = () => {
                 <HasInfo>
                     <h4>#HTML #CSS #JavaScript
                         <p>
-                            <FiThumbsUp/>
+                            <FiThumbsUp/> 10
                         </p>
                     </h4>
                 </HasInfo>
