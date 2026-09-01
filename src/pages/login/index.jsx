@@ -9,8 +9,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
 const schema = yup.object({
-    email: yup.string().email('email não é válido').required(),
-    password: yup.string().min(3, 'No mínimo 3 caracteres').required()
+    email: yup.string().email('email não é válido').required('Campo Obrigatório'),
+    password: yup.string().min(3, 'No mínimo 3 caracteres').required('Campo Obrigatório')
 }).required();
 
 const Login = () => {
@@ -43,9 +43,9 @@ const Login = () => {
                     <TitleLogin>Faça seu cadastro</TitleLogin>
                     <SubtitleLogin>Faça seu login e make the change._</SubtitleLogin>
                     <form onSubmit={ handleSubmit(onSubmit) }>
-                        <Input name="email" control={ control } type="text" placeholder="E-mail" leftIcon={ <MdEmail/> } />
-                        <Input name="password" control={ control } type="password" placeholder="Senha" leftIcon={ <MdLock/> }/>
-                        <Button title="Entrar" variant="secondary" onClick={ handleClickSignIn } type="submit" />
+                        <Input name="email" errorMessage={ errors?.email?.message } control={ control } type="text" placeholder="E-mail" leftIcon={ <MdEmail/> } />
+                        <Input name="password" errorMessage={ errors?.password?.message }  control={ control } type="password" placeholder="Senha" leftIcon={ <MdLock/> }/>
+                        <Button title="Entrar" variant="secondary" type="submit" />
                     </form>
                     <Row>
                         <EsqueciText>Esqueci Minha Senha</EsqueciText>
