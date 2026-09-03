@@ -25,7 +25,6 @@ const Login = () => {
 
     const onSubmit = async formData => {
         try {
-            console.log(formData);
             const { data } = await api.get(`users?email=${formData.email}&senha=${formData.password}`);
             if (data.length === 1) {
                 navigate('/feed')
@@ -36,9 +35,6 @@ const Login = () => {
             alert('Houve um erro, tente novamente.')
         }
     }
-
-    // const handleClickSignIn = () => {
-    // }
 
     return (<>
         <Header />
