@@ -1,6 +1,6 @@
 import logo from '../../assets/logo-dio.png';
 import { Button } from '../Button';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import {
     BuscarInputContainer,
@@ -12,10 +12,11 @@ import {
     UserPicture,
     Wrapper
 } from './style';
-import type { IHeader } from './types';
+import { AuthContext } from '../../context/auth';
+import { useContext } from 'react';
 
-const Header = ({autenticado}: IHeader) => {
-
+const Header = () => {
+    const { user, handleSignOut } = useContext(AuthContext);
     const navigate = useNavigate();
     const handleClickEntrar = () => {
         navigate("/login")
@@ -29,10 +30,10 @@ const Header = ({autenticado}: IHeader) => {
         <Wrapper>
             <Container>
                 <Row>
-                    <a href="/">
+                    <Link to="/">
                         <img src={logo} alt="Logo da dio" />
-                    </a>
-                    { autenticado ? 
+                    </Link>
+                    { user.id ? 
                         <>
                             <BuscarInputContainer>
                                 <Input placeholder="Buscar..."></Input>
@@ -43,8 +44,11 @@ const Header = ({autenticado}: IHeader) => {
                     : null }
                 </Row>
                 <Row>
-                    { autenticado ? 
-                        <UserPicture src="https://avatars.githubusercontent.com/u/43286063?v=4" />
+                    { user.id ? 
+                        <>
+                            <UserPicture src="https://avatars.githubusercontent.com/u/43286063?v=4" />{" "}
+                            <a href="#" onClick={handleSignOut}>Sair</a>
+                        </>
                     : ( 
                         <>
                             <MenuRight href="/">Home</MenuRight>
