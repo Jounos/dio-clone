@@ -12,11 +12,10 @@ import {
     UserPicture,
     Wrapper
 } from './style';
-import { AuthContext } from '../../context/auth';
-import { useContext } from 'react';
+import { useAuth } from '../../hooks/useAuth';
 
 const Header = () => {
-    const { user, handleSignOut } = useContext(AuthContext);
+    const { user, handleSignOut } = useAuth();
     const navigate = useNavigate();
     const handleClickEntrar = () => {
         navigate("/login")

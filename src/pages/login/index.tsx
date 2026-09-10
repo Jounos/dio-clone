@@ -3,13 +3,11 @@ import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input"
 import { Container, Wrapper, Column, Row, Title, TitleLogin, SubtitleLogin, EsqueciText, CriarText } from "./style";
-import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import type { IFormData } from './types';
-import { AuthContext } from '../../context/auth';
-import { useContext } from 'react';
+import { useAuth } from '../../hooks/useAuth';
 
 
 const schema = yup.object({
@@ -18,7 +16,7 @@ const schema = yup.object({
 }).required();
 
 const Login = () => {
-    const { handleLogin } = useContext(AuthContext);
+    const { handleLogin } = useAuth();
 
     const { control, handleSubmit, formState: { errors } } = useForm<IFormData>({
         resolver: yupResolver(schema),
