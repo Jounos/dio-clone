@@ -1,8 +1,6 @@
 import { Header } from "../../components/Header";
-import { Button } from "../../components/Button";
 import { Card } from "../../components/Card";
-import { Container, Column, Title, TitleHighlight } from "./style";
-import banner from "../../assets/banner.png";
+import { Container, Column, TitleHighlight } from "./style";
 import { UserInfo } from "../../components/UserInfo"
 
 

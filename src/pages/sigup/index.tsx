@@ -9,6 +9,7 @@ import { FaUser } from "react-icons/fa";
 import { MdEmail, MdLock } from "react-icons/md";
 import api from "../../services/api";
 import { useNavigate } from "react-router-dom";
+import type { IFormData } from "./types";
 
 const schema = yup.object({
     nome: yup.string().required('Campo Obrigatório'),
@@ -23,7 +24,7 @@ const SignUp = () => {
         mode: 'onChange'
     })
 
-    const onSubmit = async formData => {
+    const onSubmit = async (formData: IFormData) => {
         try {
 
             const user_exist = await api.get(`users?email=${ formData.email }`)
